@@ -4,12 +4,15 @@ class CalcController < ApplicationController
 	if params[:user]
 		@user = User.new(params[:user])
 		if @user.valid?
-			@bmr = @user.age * 10
+			@bmr = @user.get_bmr
+			User.new(params[:user]).save if params[:first_time]
 		else
-			@error = "not valid" unless @user.valid? 
+			@errors = @user.get_errors
+			@first_time = 1 if params[:first_time]
 		end
 	else
 		@user = User.new
+		@first_time = 1
 	end
   end
 

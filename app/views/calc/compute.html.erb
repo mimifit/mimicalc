@@ -1,21 +1,43 @@
-<h1>Mimi's compute</h1>
+<% if @bmr %>
+<div class="result_display">
+Rata metabolica de baza este: <br />
+<%= "#{@bmr} calorii / zi" %>
+</div><br />
+<% end %>
+
+<% if @errors %>
+<div class="errors_explain">
+	Eroare de validare:
+	<ul>
+	<% @errors.each do |error| %>
+		<li><%= error %></li>
+	<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="input_form">
 <%= form_for(@user) do |f| %>
 	<div class="field">
-		<%= f.label "Varsta" %><br />
-		<%= f.text_field :age %>
+		<%= f.label "Varsta (ani): " %>
+		<%= f.text_field :age, :size => 15 %>
 	</div>
 	<div class="field">
-		<%= f.label "Sex" %><br />
-		<%= f.radio_button :sex, "M" %>M<br />
-		<%= f.radio_button :sex, "F" %>F<br />
+		<%= f.label "Sex :" %>
+		<%= f.radio_button :sex, "M", :checked => true %>M
+		<%= f.radio_button :sex, "F" %>F
 	</div>
 	<div class="field">
-		<%= f.label "Greutate" %><br />
-		<%= f.text_field :weight %> 
+		<%= f.label "Inaltime (cm): " %>
+		<%= f.text_field :height, :size=> 15 %>
 	</div>
-	<div class="actions">
-		<%= f.submit "Compute" %>
+	<div class="field">
+		<%= f.label "Greutate (kg): " %>
+		<%= f.text_field :weight, :size => 15 %> 
+	</div>
+	<%= hidden_field_tag :first_time, :value => 'da' if @first_time %>
+	<div class="actions"> 
+		<%= f.submit "Calculeaza" %>
 	</div>
 <% end %>
-<%= @error if @error %>
-<%= "BMR:#{@bmr}" if @bmr %>
+</div>

@@ -13,9 +13,10 @@
 ActiveRecord::Schema.define(:version => 20110715042937) do
 
   create_table "users", :force => true do |t|
-    t.integer  "age",        :null => false
+    t.float    "age",        :null => false
     t.string   "sex",        :null => false
-    t.integer  "weight",     :null => false
+    t.float    "weight",     :null => false
+    t.float    "height",     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
