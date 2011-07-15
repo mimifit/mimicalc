@@ -1,4 +1,8 @@
 Mimicalc::Application.routes.draw do
+  root :to => "calc#index"
+  post "calc/compute"
+  match "/users" => "calc#compute"
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
