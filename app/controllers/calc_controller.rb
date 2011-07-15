@@ -1,17 +1,15 @@
 class CalcController < ApplicationController
-  def index
-	if params[:errors]
-		@errors = true
-	end
-	@user = User.new
-  end
-
+  
   def compute
-	@user = User.new(params[:user])
-	if @user.save
-		#success
+	if params[:user]
+		@user = User.new(params[:user])
+		if @user.valid?
+			@bmr = @user.age * 10
+		else
+			@error = "not valid" unless @user.valid? 
+		end
 	else
-		redirect_to :action => 'index', :errors => true
+		@user = User.new
 	end
   end
 

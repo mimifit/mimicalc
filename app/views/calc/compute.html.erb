@@ -1,2 +1,21 @@
-Render results of computation:
-<%= @user.inspect %>
+<h1>Mimi's compute</h1>
+<%= form_for(@user) do |f| %>
+	<div class="field">
+		<%= f.label "Varsta" %><br />
+		<%= f.text_field :age %>
+	</div>
+	<div class="field">
+		<%= f.label "Sex" %><br />
+		<%= f.radio_button :sex, "M" %>M<br />
+		<%= f.radio_button :sex, "F" %>F<br />
+	</div>
+	<div class="field">
+		<%= f.label "Greutate" %><br />
+		<%= f.text_field :weight %> 
+	</div>
+	<div class="actions">
+		<%= f.submit "Compute" %>
+	</div>
+<% end %>
+<%= @error if @error %>
+<%= "BMR:#{@bmr}" if @bmr %>

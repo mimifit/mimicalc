@@ -1,7 +1,7 @@
 Mimicalc::Application.routes.draw do
-  root :to => "calc#index"
-  post "calc/compute"
-  match "/users" => "calc#compute"
+  # root :to => "calc#index"
+
+  match "users" => "calc#compute", :via => [:get, :post]
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
