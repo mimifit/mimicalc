@@ -1,0 +1,50 @@
+/*- Reset Styles -----------------------------------------------------------*/
+	
+	
+		html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, 
+		cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, 
+		ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, hr, button
+		{margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align: baseline; background:transparent;}
+		
+		ol, ul {list-style:none;}
+		h1, h2, h3, h4, h5, h6, li {line-height:100%;}
+		blockquote, q {quotes:none;}
+		table {border-collapse:collapse; border-spacing:0;}
+		
+
+/*- End Reset Styles -------------------------------------------------------*/
+
+/*- General Styles ---------------------------------------------------------*/
+
+
+		body {font:100% Arial, sans-serif; background:#FFF}
+
+/*-----------------------------------------------------------------------------------------------*/
+
+
+/*- Calc Form -----------------------------------------------------------*/
+
+    .mimi_calculator { font:100% Arial, sans-serif; background:#FFF; padding:10px 15px 10px 10px; width:400px; border:1px solid #DDD;}
+
+    .result_label {font:100% Arial, sans-serif; background:#FFF; color: #555; padding:8px 0px; font-size:1em;}
+    .result_label_computed {font:100% Arial, sans-serif; text-align: center; background:#FFF; color: green; padding:20px 0px 20px 0px; font-size:2em; width:400px;}
+
+    .errors_explain {font:100% Arial, sans-serif; background:#FFF; color: #F00; padding:8px 10px; font-size:1em;}
+
+		.calc_input_form {font:100% Arial, sans-serif; background:#FFF}
+						
+			/*- Form elements -*/
+			.calc_input_form p {padding:0 0 15px 65px;}	
+			.calc_input_form label {display:block; font-size:0.8em; text-transform:uppercase; color:#555; padding-bottom:3px;}
+			.calc_input_form input,
+			.calc_input_form textarea {width:100%; font-family:inherit; font-size:1em; color:#555; padding:8px 0px; border:1px solid #DDD;}
+			.calc_input_form textarea {font-size:0.9em; height:170px; overflow:auto;}
+			.calc_input_form .actions { width:100%; padding:10px 0px 10px 0px;}
+			.calc_input_form #user_submit { width: 100%; border:1px solid #DDD; margin-left:auto; margin-right:auto;}
+			/* .calc_input_form button {display:inline; height:10px; cursor:pointer; width:128px; -moz-border-radius:5px; -webkit-border-radius:5px;} */
+			/* .calc_input_form button.hoverBtn {background-position:-43px -33px;} */
+			.field {padding:5px 0 5px 0;}	
+			
+
+/*- End Calc Form -------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------*/

@@ -1,38 +1,42 @@
+<%= stylesheet_link_tag :all %>
+
+<div class="mimi_calculator">
+
 <% if @bmr %>
 <div class="result_display">
-Rata metabolica de baza este: <br />
-<%= "#{@bmr} calorii / zi" %>
-</div><br />
+<p class="result_label">Rata metabolica de baza este:</p>
+<p class="result_label_computed"><%= "#{@bmr} calorii / zi" %></p>
+</div>
 <% end %>
 
 <% if @errors %>
 <div class="errors_explain">
-	Eroare de validare:
+	<strong>Eroare de validare:</strong>
 	<ul>
 	<% @errors.each do |error| %>
-		<li><%= error %></li>
+		<li><strong><%= error %></strong></li>
 	<% end %>
 	</ul>
 </div>
 <% end %>
 
-<div class="input_form">
+<div class="calc_input_form">
 <%= form_for(@user) do |f| %>
 	<div class="field">
-		<%= f.label "Varsta (ani): " %>
+	  <label><strong>Varsta (ani): </strong></label>
 		<%= f.text_field :age, :size => 15 %>
 	</div>
 	<div class="field">
-		<%= f.label "Sex :" %>
+		<label><strong>Sex : </strong></label>
 		<%= f.radio_button :sex, "M", :checked => true %>M
 		<%= f.radio_button :sex, "F" %>F
 	</div>
 	<div class="field">
-		<%= f.label "Inaltime (cm): " %>
+  	<label><strong>Inaltime (cm): </strong></label>
 		<%= f.text_field :height, :size=> 15 %>
 	</div>
 	<div class="field">
-		<%= f.label "Greutate (kg): " %>
+	  <label><strong>Greutate (kg): </strong></label>
 		<%= f.text_field :weight, :size => 15 %> 
 	</div>
 	<%= hidden_field_tag :first_time, :value => 'da' if @first_time %>
@@ -40,4 +44,6 @@ Rata metabolica de baza este: <br />
 		<%= f.submit "Calculeaza" %>
 	</div>
 <% end %>
+</div>
+
 </div>
